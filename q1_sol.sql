@@ -14,8 +14,8 @@ SET @v8 = 'MAT';
 -- After introducing an index to Student.id, this query resulted in the quickest execution time.
 -- Without the index, this query still runs slightly faster than the original 
 WITH cte AS (SELECT name
-			FROM Student
-			WHERE id = @v1)
+	     FROM Student
+	     WHERE id = @v1)
             
 SELECT *
 FROM cte
