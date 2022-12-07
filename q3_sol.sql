@@ -14,9 +14,9 @@ SET @v8 = 'MAT';
 -- ANSWER:
 -- This query has a lower query cost and execution runtime than the original.
 WITH cte AS (SELECT name
-			FROM Student
-            INNER JOIN transcript ON Student.id = transcript.studID
-            WHERE crsCode = @v4)
+	     FROM Student
+             INNER JOIN transcript ON Student.id = transcript.studID
+             WHERE crsCode = @v4)
             
 SELECT *
 FROM cte
