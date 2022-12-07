@@ -19,12 +19,11 @@ SET @v8 = 'MAT';
 WITH allv8Classes AS (SELECT stud.name AS studentName,
                              crs.deptId AS departmentID,
                              COUNT(crs.crsCode) AS totalCourses
-					 FROM student AS stud
-					 INNER JOIN transcript AS trans ON stud.id = trans.studId
-				  	 INNER JOIN course AS crs ON trans.crsCode = crs.crsCode
-					 WHERE crs.deptId = @v8
-                     GROUP BY stud.name)
+		      FROM student AS stud
+		      INNER JOIN transcript AS trans ON stud.id = trans.studId
+		      INNER JOIN course AS crs ON trans.crsCode = crs.crsCode
+		      WHERE crs.deptId = @v8
+                      GROUP BY stud.name)
 
 SELECT *
 FROM allv8Classes
-
