@@ -16,17 +16,18 @@ SET @v8 = 'MAT';
 -- After checking the provided tables, this seems like the correct answer
 -- Examining the execution plan makes me think the query is inefficient because it performs 4 Full Table Scans resulting in 1000 rows being read
 WITH profTeaches AS (SELECT prof.name AS profName,
-							prof.id AS profID,
-							teach.crsCode AS crsCode
-					FROM professor AS prof
-					INNER JOIN teaching AS teach ON prof.id = teach.profId
-					WHERE prof.name = @v5),
-	studTrans AS (SELECT trans.studID,
-						trans.crsCode AS crsCode,
-						stud.name AS studName
-				FROM transcript as trans
-				INNER JOIN student AS stud on trans.studID = stud.id)
-            
+			    prof.id AS profID,
+			    teach.crsCode AS crsCode
+		     FROM professor AS prof
+		     INNER JOIN teaching AS teach ON prof.id = teach.profId
+		     WHERE prof.name = @v5),
+		     
+     studTrans AS (SELECT trans.studID,
+			  trans.crsCode AS crsCode,
+			  stud.name AS studName
+		   FROM transcript as trans
+		   INNER JOIN student AS stud on trans.studID = stud.id)
+
 SELECT *
 FROM studTrans
 INNER JOIN profTeaches ON studTrans.crsCode = profTeaches.crsCode
