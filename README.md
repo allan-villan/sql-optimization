@@ -3,7 +3,7 @@
 
 - Optimizations were made if necessary. 
 
-- This project was completed using MySQL, so the **Query Execution Plans** being optimized were created by MySQL's optimizer.
+- This project uses MySQL, so the Query Execution Plans were created by MySQL's optimizer.
 
 ### Notable Improvement
 The most notable improvement was for Question 5 where I was able to:
