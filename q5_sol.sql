@@ -16,10 +16,10 @@ SET @v8 = 'MAT';
 -- This query also reduces the execution time by a decimal point (.0052 to .00078)
 
 WITH cte AS (SELECT stud.name AS name,
-					crs.deptId AS deptId
-			FROM student AS stud
-            INNER JOIN transcript AS trans ON stud.id = trans.studId
-            INNER JOIN course AS crs ON trans.crsCode = crs.crsCode)
+		    crs.deptId AS deptId
+	     FROM student AS stud
+             INNER JOIN transcript AS trans ON stud.id = trans.studId
+             INNER JOIN course AS crs ON trans.crsCode = crs.crsCode)
             
 SELECT name
 FROM cte
